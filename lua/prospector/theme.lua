@@ -134,7 +134,7 @@ theme.load = function(c, config)
     LspDiagnosticsSignInformation         = { fg = c.sky },
     LspDiagnosticsSignHint                = { fg = c.d55 },
 
-    -- LspCodeLens                           = { },
+    LspCodeLens                           = { fg = c.yellow },
 
     TSAnnotation         = { fg = c.red },
     TSAttribute          = { fg = c.red },
@@ -152,7 +152,7 @@ theme.load = function(c, config)
     TSFloat              = { fg = c.blue },
     TSFunction           = { fg = c.yellow },
     TSFuncBuiltin        = { fg = c.darkyellow },
-    TSFuncMacro          = { },
+    TSFuncMacro          = { fg = c.d55 },
     TSInclude            = { fg = c.red },
     TSKeyword            = { fg = c.gray, gui = 'bold' },
     TSKeywordFunction    = { fg = c.gray, gui = 'bold' },
@@ -171,7 +171,7 @@ theme.load = function(c, config)
     TSRepeat             = { fg = c.red },
     TSString             = { fg = c.green },
     TSStringRegex        = { fg = c.red },
-    TSStringEscape       = { },
+    TSStringEscape       = { fg = c.yellow },
     TSSymbol             = { fg = c.yellow },
     TSType               = { fg = c.yellow },
     TSTypeBuiltin        = { fg = c.yellow },
@@ -182,11 +182,11 @@ theme.load = function(c, config)
     TSTagDelimiter       = { fg = c.s4 },
     TSText               = { fg = c.s8 },
     TSEmphasis           = { fg = c.sky },
-    TSUnderline          = { gui = 'none' },
+    TSUnderline          = { gui = 'underline' },
     TSStrike             = { gui = 'strikethrough' },
     TSTitle              = { bg = c.d25 },
     -- TSLiteral         = { },
-    -- TSURI             = { },
+    TSURI                = { fg = c.sky },
 
     -- Jsdoc
     JSDocName = { fg = c.d35 },
