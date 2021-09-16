@@ -2,7 +2,7 @@ local theme = {}
 
 theme.load = function(c, config)
 
-  local underline_diagnostics = config.underline_diagnostics and 'underline' or 'none'
+  local diagnostics_underline = config.underline_diagnostics and 'underline' or 'none'
 
   local groups = {
     Normal       = { fg = c.fg, bg = c.bg },
@@ -119,10 +119,10 @@ theme.load = function(c, config)
     LspDiagnosticsVirtualTextInformation  = { fg = c.sky },
     LspDiagnosticsVirtualTextHint         = { fg = c.d45 },
 
-    LspDiagnosticsUnderlineError          = { fg = 'none', gui = underline_diagnostics },
-    LspDiagnosticsUnderlineWarning        = { fg = 'none', gui = underline_diagnostics },
-    LspDiagnosticsUnderlineInformation    = { fg = 'none', gui = underline_diagnostics },
-    LspDiagnosticsUnderlineHint           = { fg = 'none', gui = underline_diagnostics },
+    LspDiagnosticsUnderlineError          = { fg = 'none', gui = diagnostics_underline },
+    LspDiagnosticsUnderlineWarning        = { fg = 'none', gui = diagnostics_underline },
+    LspDiagnosticsUnderlineInformation    = { fg = 'none', gui = diagnostics_underline },
+    LspDiagnosticsUnderlineHint           = { fg = 'none', gui = diagnostics_underline },
 
     LspDiagnosticsFloatingError           = { fg = c.error },
     LspDiagnosticsFloatingWarning         = { fg = c.yellow },

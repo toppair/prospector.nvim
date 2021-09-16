@@ -1,4 +1,23 @@
-local function apply(colors, theme)
+local function prepare()
+  vim.cmd 'hi clear'
+  vim.cmd 'syntax reset'
+  vim.opt.termguicolors = true
+  vim.opt.background = 'dark'
+  vim.g.colors_name = 'prospector'
+end
+
+local function config_with_defaults(cfg)
+
+  local default = {
+    terminal_colors = true,
+    underline_diagnostics = false,
+  }
+
+  return vim.tbl_extend('force', default, cfg or {})
+
+end
+
+local function apply_theme(theme)
 
   for group, style in pairs(theme) do
     local fg = style.fg and ' guifg=' .. style.fg or ' guifg=NONE'
@@ -8,7 +27,9 @@ local function apply(colors, theme)
     vim.cmd('hi ' .. group  .. fg  .. bg  .. gui)
   end
 
+end
 
+local function apply_terminal_colors(colors)
   vim.g.terminal_color_0 =  colors.bg
   vim.g.terminal_color_1 =  colors.red
   vim.g.terminal_color_2 =  colors.green
@@ -28,14 +49,9 @@ local function apply(colors, theme)
   vim.g.terminal_color_15 = colors.fg
 end
 
-local function config(cfg)
-
-  local default = {
-    underline_diagnostics = false
-  }
-
-  return vim.tbl_extend('force', default, cfg or {})
-
-end
-
-return { apply = apply, config = config }
+return {
+  prepare = prepare,
+  config_with_defaults = config_with_defaults,
+  apply_theme = apply_theme,
+  apply_terminal_colors = apply_terminal_colors,
+}
