@@ -1,6 +1,6 @@
 local module = {}
 
-module.load = function(cfg)
+module.setup = function(cfg)
 
   if vim.g.colors_name == 'prospector' then
     return

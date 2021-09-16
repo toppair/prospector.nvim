@@ -1,2 +1,2 @@
 lua package.loaded['prospector'] = nil
-lua require('prospector').load()
+lua require('prospector').setup()
