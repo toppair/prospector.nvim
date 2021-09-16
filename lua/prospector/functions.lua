@@ -4,7 +4,6 @@ local function prepare()
   vim.opt.termguicolors = true
   vim.opt.background = 'dark'
   vim.g.colors_name = 'prospector'
-  vim.cmd 'syntax on'
 end
 
 local function config_with_defaults(config)

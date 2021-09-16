@@ -2,6 +2,10 @@ local module = {}
 
 module.load = function(cfg)
 
+  if vim.g.colors_name == 'prospector' then
+    return
+  end
+
   local colors = require('prospector.colors')
   local fn = require('prospector.functions')
 
