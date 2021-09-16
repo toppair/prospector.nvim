@@ -48,7 +48,7 @@ theme.load = function(c, config)
     CursorColumn = { bg = c.bg_lighten5 },
     CursorLine   = { bg = c.bg_lighten5 },
     TermCursor   = { bg = c.d25 },
-    TermCursorNC = { bg = c.d25 },
+    TermCursorNC = { bg = c.bg },
     ModeMsg      = { fg = c.s8, bg = c.bg },
     MsgArea      = { fg = c.s8, bg = c.bg },
     StatusLine   = { bg = c.s2 },

@@ -4,16 +4,17 @@ local function prepare()
   vim.opt.termguicolors = true
   vim.opt.background = 'dark'
   vim.g.colors_name = 'prospector'
+  vim.cmd 'syntax on'
 end
 
-local function config_with_defaults(cfg)
+local function config_with_defaults(config)
 
   local default = {
     terminal_colors = true,
-    underline_diagnostics = false,
+    underline_diagnostics = true,
   }
 
-  return vim.tbl_extend('force', default, cfg or {})
+  return vim.tbl_extend('force', default, config or {})
 
 end
 
