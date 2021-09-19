@@ -3,13 +3,14 @@ local theme = {}
 theme.load = function(c, config)
 
   local diagnostics_underline = config.underline_diagnostics and 'underline' or 'none'
+  local gui_comments = config.italic_comments and 'italic' or 'none'
 
   local groups = {
     Normal       = { fg = c.fg, bg = c.bg },
     LineNr       = { fg = c.s3, bg = c.bg },
     CursorLineNr = { fg = c.fg },
     SignColumn   = { fg = c.fg, bg = c.bg },
-    Comment      = { fg = c.s4 },
+    Comment      = { fg = c.s3, gui = gui_comments },
     Visual       = { bg = c.bg_lighten5 },
     VisualNOS    = { bg = c.bg_lighten5 },
     NormalFloat  = { fg = c.s8, bg = c.bg },
@@ -140,7 +141,7 @@ theme.load = function(c, config)
     TSAttribute          = { fg = c.red },
     TSBoolean            = { fg = c.blue },
     TSCharacter          = { fg = c.green },
-    TSComment            = { fg = c.s3 },
+    TSComment            = { fg = c.s3, gui = gui_comments },
     TSConstructor        = { fg = c.d55 },
     TSConditional        = { fg = c.red },
     TSConstant           = { fg = c.blue },

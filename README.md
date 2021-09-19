@@ -23,8 +23,9 @@ require('prospector').setup()
 #### Configuration
 ```
 {
+  italic_comments = true,
   terminal_colors = true,
-  underline_diagnostics = true
+  underline_diagnostics = true,
 }
 ```
 

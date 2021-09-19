@@ -9,8 +9,9 @@ end
 local function config_with_defaults(config)
 
   local default = {
+    italic_comments = true,
     terminal_colors = true,
-    underline_diagnostics = true,
+    underline_diagnostics = true
   }
 
   return vim.tbl_extend('force', default, config or {})
