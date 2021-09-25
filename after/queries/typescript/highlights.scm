@@ -4,3 +4,5 @@
 
 ((shorthand_property_identifier_pattern) @Constant
  (#match? @Constant "^[A-Z_]+$"))
+
+"default" @Keyword

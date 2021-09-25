@@ -3,3 +3,4 @@
 
 (call_expression (identifier) @Include (#match? @Include "require"))
 
+"default" @Keyword
