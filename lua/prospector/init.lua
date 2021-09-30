@@ -10,13 +10,13 @@ module.setup = function(cfg)
   local fn = require('prospector.functions')
 
   local config = fn.config_with_defaults(cfg)
-  local theme = require('prospector.theme').load(colors, config)
+  local theme = fn.load_theme(colors, config)
 
-  fn.prepare()
+  fn.prepare(config)
   fn.apply_theme(theme)
 
   if config.terminal_colors then
-    fn.apply_terminal_colors(colors)
+    fn.apply_terminal_colors(colors, config)
   end
 
 end
