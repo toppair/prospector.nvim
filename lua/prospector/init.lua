@@ -14,6 +14,7 @@ module.setup = function(cfg)
 
   fn.prepare(config)
   fn.apply_theme(theme)
+  fn.set_dev_icons(config)
 
   if config.terminal_colors then
     fn.apply_terminal_colors(colors, config)

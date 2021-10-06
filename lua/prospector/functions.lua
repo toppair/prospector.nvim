@@ -91,10 +91,31 @@ local function apply_terminal_colors(colors, config)
 
 end
 
+local function set_dev_icons(config)
+
+  if config.variant == 'light' then
+
+    local status, dev_icons = pcall(require, 'nvim-web-devicons')
+
+    if status then
+
+      local util = require('prospector.util')
+      local icons = dev_icons.get_icons()
+
+      for _, conf in pairs(icons) do
+        conf.color = util.tweak_color(conf.color, 0, 50, -20)
+      end
+
+    end
+  end
+
+end
+
 return {
   prepare = prepare,
   config_with_defaults = config_with_defaults,
   load_theme = load_theme,
   apply_theme = apply_theme,
   apply_terminal_colors = apply_terminal_colors,
+  set_dev_icons = set_dev_icons
 }
