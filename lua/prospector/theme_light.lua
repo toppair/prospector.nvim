@@ -227,7 +227,15 @@ module.load = function(c, config)
 		DashboardShortCut                      = { fg = c.green },
 		DashboardHeader                        = { fg = c.purple },
 		DashboardCenter                        = { fg = c.brown },
-		DashboardFooter                        = { fg = c.blue }
+		DashboardFooter                        = { fg = c.blue },
+
+    -- Cmp
+    CmpItemAbbr                            = { fg = c.fg },
+    CmpItemAbbrDeprecated                  = { fg = c.red },
+    CmpItemAbbrMatch                       = { fg = c.fg },
+    CmpItemAbbrMatchFuzzy                  = { fg = c.fg },
+    CmpItemKind                            = { fg = c.fg },
+    CmpItemMenu                            = { fg = c.fg },
   }
 
 end
