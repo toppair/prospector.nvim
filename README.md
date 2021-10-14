@@ -43,5 +43,6 @@ require('prospector').setup()
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
+- [TreesitterContext](https://github.com/romgrk/nvim-treesitter-context)
 
 ---

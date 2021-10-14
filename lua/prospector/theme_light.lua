@@ -42,7 +42,7 @@ module.load = function(c, config)
     MoreMsg      = { fg = c.blue },
     Question     = { fg = c.green },
     NormalNC     = { fg = c.fg  },
-    -- ColorColumn  =  {},
+    ColorColumn  = { bg = c.bg },
     Cursor       = { bg = c.fg  },
     lCursor      = { bg = c.fg },
     CursorIM     = { bg = c.fg },
@@ -236,6 +236,9 @@ module.load = function(c, config)
     CmpItemAbbrMatchFuzzy                  = { fg = c.fg },
     CmpItemKind                            = { fg = c.fg },
     CmpItemMenu                            = { fg = c.fg },
+
+    -- Treesitter-Context
+    TreesitterContext                      = { bg = c.bg_darken10 }
   }
 
 end
