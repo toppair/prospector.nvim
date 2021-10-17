@@ -27,12 +27,24 @@ require('prospector').setup()
 ```
 
 #### Configuration
+default:
 ```
 {
   variant = 'dark',
   italic_comments = true,
   terminal_colors = true,
   underline_diagnostics = true,
+  groups = {}
+}
+```
+
+##### linking / altering groups
+```
+{
+  groups = {
+    TSComment = 'String'                              -- link TSComment group to String group
+    TSFunction = { fg = '#ffffff', gui = 'italic' }   -- make function names white and italic
+  }
 }
 ```
 

@@ -10,7 +10,9 @@ module.setup = function(cfg)
   local fn = require('prospector.functions')
 
   local config = fn.config_with_defaults(cfg)
-  local theme = fn.load_theme(colors, config)
+  local theme = fn.merge_groups(
+    fn.load_theme(colors, config), config.groups
+  )
 
   fn.prepare(config)
   fn.apply_theme(theme)

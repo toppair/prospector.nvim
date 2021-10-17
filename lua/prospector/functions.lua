@@ -13,6 +13,7 @@ local function config_with_defaults(config)
     italic_comments = true,
     terminal_colors = true,
     underline_diagnostics = true,
+    groups = {}
   }
 
   return vim.tbl_extend('force', default, config or {})
@@ -111,11 +112,29 @@ local function set_dev_icons(config)
 
 end
 
+local function merge_groups(theme, groups)
+
+  for group, style in pairs(groups) do
+
+    if type(style) == 'string' then
+      theme[group] = theme[style] or {}
+    else
+      for key, value in pairs(style) do
+        theme[group][key] = value
+      end
+    end
+
+  end
+
+  return theme
+end
+
 return {
-  prepare = prepare,
+  apply_terminal_colors = apply_terminal_colors,
+  apply_theme = apply_theme,
   config_with_defaults = config_with_defaults,
   load_theme = load_theme,
-  apply_theme = apply_theme,
-  apply_terminal_colors = apply_terminal_colors,
-  set_dev_icons = set_dev_icons
+  merge_groups = merge_groups,
+  prepare = prepare,
+  set_dev_icons = set_dev_icons,
 }
