@@ -53,6 +53,7 @@ default:
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
+- [Marks](https://github.com/chentau/marks.nvim)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
 - [TreesitterContext](https://github.com/romgrk/nvim-treesitter-context)

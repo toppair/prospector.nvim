@@ -238,7 +238,12 @@ module.load = function(c, config)
     CmpItemMenu                            = { fg = c.fg },
 
     -- Treesitter-Context
-    TreesitterContext                      = { bg = c.bg_lighten5 }
+    TreesitterContext                      = { bg = c.bg_lighten5 },
+
+    -- Marks
+    MarkSignHL                             = { fg = c.sky },
+    MarkSignNumHL                          = { fg = c.sky },
+    MarkVirtTextHL                         = { fg = c.sky },
   }
 
 end
