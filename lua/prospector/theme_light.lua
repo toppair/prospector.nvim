@@ -244,6 +244,10 @@ module.load = function(c, config)
     MarkSignHL                             = { fg = c.sky },
     MarkSignNumHL                          = { fg = c.sky },
     MarkVirtTextHL                         = { fg = c.sky },
+
+    -- Symbols-Outline
+    FocusedSymbol                          = { bg = c.bg_darken10 },
+    SymbolsOutlineConnector                = { fg = c.s6 },
   }
 
 end

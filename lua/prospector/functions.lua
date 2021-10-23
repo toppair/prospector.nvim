@@ -92,24 +92,12 @@ local function apply_terminal_colors(colors, config)
 
 end
 
-local function set_dev_icons(config)
+local function setup_plugins(config)
+  local plugins = require('prospector.plugins')
 
-  if config.variant == 'light' then
-
-    local status, dev_icons = pcall(require, 'nvim-web-devicons')
-
-    if status then
-
-      local util = require('prospector.util')
-      local icons = dev_icons.get_icons()
-
-      for _, conf in pairs(icons) do
-        conf.color = util.tweak_color(conf.color, 0, 50, -20)
-      end
-
-    end
+  for _, setup in pairs(plugins) do
+    setup(config)
   end
-
 end
 
 local function merge_groups(theme, groups)
@@ -136,5 +124,5 @@ return {
   load_theme = load_theme,
   merge_groups = merge_groups,
   prepare = prepare,
-  set_dev_icons = set_dev_icons,
+  setup_plugins = setup_plugins
 }
