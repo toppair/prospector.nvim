@@ -2,6 +2,8 @@ local module = {}
 
 module.load = function(c, config)
 
+  local t = require('prospector.util').tweak_color
+
   local diagnostics_underline = config.underline_diagnostics and 'underline' or 'none'
   local gui_comments = config.italic_comments and 'italic' or 'none'
 
@@ -27,10 +29,10 @@ module.load = function(c, config)
     WarningMsg   = { fg = c.d55 },
     MsgSeparator = { bg = c.d25 },
     EndOfBuffer  = { fg = c.s3 },
-    DiffAdd      = { fg = c.bg, bg = c.green },
-    DiffChange   = { fg = c.bg, bg = c.d45 },
-    DiffDelete   = { fg = c.bg, bg = c.red },
-    DiffText     = { fg = c.fg, bg = c.d25 },
+    DiffAdd      = { fg = c.fg, bg = t(c.bg, 100, 20, 15) },
+    DiffChange   = { fg = c.fg, bg = t(c.bg, 200, 20, 15) },
+    DiffDelete   = { fg = c.fg, bg = t(c.bg, 0, 20, 15) },
+    DiffText     = { fg = c.fg, bg = t(c.bg, 200, 20, 15), gui = 'underline' },
     TabLine      = { bg = c.s2 },
     TabLineFill  = { bg = c.s2 },
     TabLineSel   = { fg = c.d45 },
@@ -55,13 +57,13 @@ module.load = function(c, config)
     StatusLine   = { bg = c.s2 },
     Directory    = { fg = c.blue },
     QuickFixLine = { fg = c.yellow, bg = c.d25 },
+    Whitespace   = { fg = c.bg_lighten5 },
     -- Substitute   = {},
     -- SpellBad     = { },
     -- SpellCap     = { },
     -- SpellLocal   = { },
     -- SpellRare    = { },
     -- StatusLineNC = { },
-    -- Whitespace   = { },
     -- WildMenu     = { },
 
     Foreground     = { fg = c.fg },
