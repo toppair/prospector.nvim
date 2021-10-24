@@ -23,7 +23,7 @@ module.load = function(c, config)
     IncSearch    = { fg = c.bg, bg = c.sky },
     Search       = { fg = c.fg, bg = c.bg_darken20 },
     Folded       = { fg = c.s4, bg = c.bg_darken10 },
-    FoldColumn   = { fg = c.s6, bg = c.bg_darken10 },
+    FoldColumn   = { fg = c.s4, bg = c.bg },
     MatchParen   = { fg = c.fg, bg = c.bg_darken10, gui = 'bold' },
     ErrorMsg     = { fg = c.error, bg = c.bg },
     WarningMsg   = { fg = c.error },
