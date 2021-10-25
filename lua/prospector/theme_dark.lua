@@ -191,6 +191,28 @@ module.load = function(c, config)
     -- TSLiteral         = { },
     TSURI                = { fg = c.sky },
 
+    -- markdown
+    markdownUrl          = { fg = c.blue, gui = 'underline' },
+    markdownLinkText     = { fg = c.sky, gui = 'italic' },
+    markdownCode         = { fg = c.yellow },
+    markdownBlockquote   = { fg = c.fg, gui = 'italic' },
+    markdownListMarker   = { fg = c.blue },
+    markdownRule         = { fg = c.s3, gui = 'bold' },
+
+    markdownH1           = { fg = c.fg, gui = 'bold' },
+    markdownH2           = { fg = t(c.fg, 0, 0, -5), gui = 'bold' },
+    markdownH3           = { fg = t(c.fg, 0, 0, -10), gui = 'bold' },
+    markdownH4           = { fg = t(c.fg, 0, 0, -15), gui = 'bold' },
+    markdownH5           = { fg = t(c.fg, 0, 0, -20), gui = 'bold' },
+    markdownH6           = { fg = t(c.fg, 0, 0, -25), gui = 'bold' },
+
+    markdownH1Delimiter  = { fg = t(c.red, 0, 0, -20), gui ='bold' },
+    markdownH2Delimiter  = { fg = t(c.red, 0, 0, -15), gui = 'bold'  },
+    markdownH3Delimiter  = { fg = t(c.red, 0, 0, -10), gui = 'bold' },
+    markdownH4Delimiter  = { fg = t(c.red, 0, 0, -5), gui = 'bold' },
+    markdownH5Delimiter  = { fg = c.red, gui = 'bold' },
+    markdownH6Delimiter  = { fg = t(c.red, 0, 0, 5), gui = 'bold' },
+
     -- Jsdoc
     JSDocName = { fg = c.d35 },
     JSDocType = { fg = c.yellow },
