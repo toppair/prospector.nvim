@@ -213,6 +213,11 @@ module.load = function(c, config)
     markdownH5Delimiter  = { fg = c.red, gui = 'bold' },
     markdownH6Delimiter  = { fg = t(c.red, 0, 0, 5), gui = 'bold' },
 
+    -- help
+    helpExample          = { fg = c.s6, gui = gui_comments },
+    helpComment          = { fg = c.s6, gui = gui_comments },
+    helpCommand          = { fg = c.s6, gui = gui_comments },
+
     -- Jsdoc
     JSDocName = { fg = c.d35 },
     JSDocType = { fg = c.yellow },
