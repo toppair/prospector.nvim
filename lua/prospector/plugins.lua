@@ -28,7 +28,16 @@ local function setup_symbols_outline()
 
 end
 
+local function setup_fugitive(config)
+
+  if config.variant == 'light' then
+    vim.g.fugitive_dynamic_colors = 0
+  end
+
+end
+
 return {
   setup_dev_icons = setup_dev_icons,
-  setup_symbols_outline = setup_symbols_outline
+  setup_symbols_outline = setup_symbols_outline,
+  setup_fugitive = setup_fugitive,
 }

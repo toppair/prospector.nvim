@@ -54,16 +54,16 @@ module.load = function(c, config)
     TermCursorNC = { bg = c.bg },
     ModeMsg      = { fg = c.s8, bg = c.bg },
     MsgArea      = { fg = c.fg, bg = c.bg },
-    StatusLine   = { fg = c.red, bg = c.b65 },
+    StatusLine   = { fg = c.fg, bg = c.b65 },
     Directory    = { fg = c.blue },
-    QuickFixLine = { fg = c.brown, bg = c.fg },
+    QuickFixLine = { fg = c.fg, bg = c.bg_darken10 },
     Whitespace   = { fg = c.b65 },
+    StatusLineNC = { fg = c.s4, bg = c.b75 },
     -- Substitute   = {},
     -- SpellBad     = { },
     -- SpellCap     = { },
     -- SpellLocal   = { },
     -- SpellRare    = { },
-    -- StatusLineNC = { },
     -- WildMenu     = { },
 
     Foreground     = { fg = c.fg },
@@ -277,6 +277,16 @@ module.load = function(c, config)
     -- Symbols-Outline
     FocusedSymbol                          = { bg = c.bg_darken10 },
     SymbolsOutlineConnector                = { fg = c.s6 },
+
+    -- Fugitive
+    diffAdded                              = { fg = c.fg, bg = t(c.bg, 50, 0, -10) },
+    diffLine                               = { fg = c.fg, bg = t(c.bg, 150, 0, -10) },
+    diffRemoved                            = { fg = c.fg, bg = t(c.bg, -60, 0, -10) },
+    fugitiveStagedHeading                  = { fg = c.green },
+    fugitiveUntrackedModifier              = { fg = c.red },
+    fugitiveUnstagedModifier               = { fg = c.purple },
+    fugitiveStagedModifier                 = { fg = c.green },
+    fugitiveHash                           = { fg = c.sky },
   }
 
 end
