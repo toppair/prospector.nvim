@@ -115,7 +115,7 @@ module.load = function(c, config)
     LspDiagnosticsDefaultError            = { fg = c.error },
     LspDiagnosticsDefaultWarning          = { fg = c.yellow },
     LspDiagnosticsDefaultInformation      = { fg = c.sky },
-    LspDiagnosticsDefaultHint             = { fg = c.d55 },
+    LspDiagnosticsDefaultHint             = { fg = c.d45 },
 
     LspDiagnosticsVirtualTextError        = { fg = c.error },
     LspDiagnosticsVirtualTextWarning      = { fg = c.yellow },
@@ -130,12 +130,12 @@ module.load = function(c, config)
     LspDiagnosticsFloatingError           = { fg = c.error },
     LspDiagnosticsFloatingWarning         = { fg = c.yellow },
     LspDiagnosticsFloatingInformation     = { fg = c.sky },
-    LspDiagnosticsFloatingHint            = { fg = c.d55 },
+    LspDiagnosticsFloatingHint            = { fg = c.d45 },
 
     LspDiagnosticsSignError               = { fg = c.error },
     LspDiagnosticsSignWarning             = { fg = c.yellow },
     LspDiagnosticsSignInformation         = { fg = c.sky },
-    LspDiagnosticsSignHint                = { fg = c.d55 },
+    LspDiagnosticsSignHint                = { fg = c.d45 },
 
     LspCodeLens                           = { fg = c.yellow },
 
