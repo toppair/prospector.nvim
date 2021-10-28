@@ -183,7 +183,7 @@ module.load = function(c, config)
 
     TSTag                = { fg = c.red },
     TSTagDelimiter       = { fg = c.s4 },
-    TSText               = { fg = c.s8 },
+    TSText               = { fg = c.fg },
     TSEmphasis           = { fg = c.sky },
     TSUnderline          = { gui = 'underline' },
     TSStrike             = { gui = 'strikethrough' },
