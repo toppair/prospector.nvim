@@ -108,9 +108,9 @@ module.load = function(c, config)
     Error          = { fg = c.error },
     Todo           = { fg = c.fg, bg = c.bg_darken20, gui = 'bold' },
 
-    -- LspReferenceText   = { },
-    -- LspReferenceRead   = { },
-    -- LspReferenceWrite  = { },
+    LspReferenceText   = { bg = c.bg_darken10 },
+    LspReferenceRead   = { bg = c.bg_darken10 },
+    LspReferenceWrite  = { bg = c.bg_darken10, gui = 'bold' },
 
     LspDiagnosticsDefaultError            = { fg = c.error },
     LspDiagnosticsDefaultWarning          = { fg = c.gold },
