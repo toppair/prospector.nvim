@@ -13,7 +13,7 @@
 ![Preview](./preview_light.png)
 
 #### Requirements
-- Neovim >= 0.5
+- [Neovim](https://github.com/neovim/neovim) >= 0.5
 - [Treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
 
 #### Installation
