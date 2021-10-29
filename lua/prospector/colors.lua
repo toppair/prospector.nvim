@@ -27,7 +27,6 @@ return {
   },
   light = {
     bg = '#f2f7ba',
-    bg_lighten10 = '#fbfce8',
     bg_darken10 = '#eaf28c',
     bg_darken20 = '#e1ed5e',
     fg = '#000000',
