@@ -287,6 +287,27 @@ module.load = function(c, config)
     fugitiveUnstagedModifier               = { fg = c.purple },
     fugitiveStagedModifier                 = { fg = c.green },
     fugitiveHash                           = { fg = c.sky },
+
+    -- Dap UI
+    DapUIVariable                          = { fg = c.fg },
+    DapUIScope                             = { fg = c.brown },
+    DapUIType                              = { fg = c.gold },
+    DapUIValue                             = { fg = c.fg },
+    DapUIModifiedValue                     = { fg = c.sky },
+    DapUIDecoration                        = { fg = c.b65 },
+    DapUIThread                            = { fg = c.fg },
+    DapUIStoppedThread                     = { fg = c.s2 },
+    DapUIFrameName                         = { fg = c.fg },
+    DapUISource                            = { fg = c.purple },
+    DapUILineNumber                        = { fg = c.blue },
+    DapUIFloatBorder                       = {},
+    DapUIWatchesEmpty                      = { fg = c.s4 },
+    DapUIWatchesValue                      = { fg = c.b65 },
+    DapUIWatchesError                      = { fg = c.error },
+    DapUIBreakpointsPath                   = { fg = c.brown },
+    DapUIBreakpointsInfo                   = {},
+    DapUIBreakpointsCurrentLine            = { fg = c.green, bg = c.bg_darken10, gui = 'bold' },
+    DapUIBreakpointsLine                   = { fg = c.blue },
   }
 
 end

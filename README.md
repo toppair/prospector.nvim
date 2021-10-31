@@ -51,6 +51,7 @@ default:
 #### Plugin support
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
+- [DapUI](https://github.com/rcarriga/nvim-dap-ui)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Fugitive](https://github.com/tpope/vim-fugitive)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
