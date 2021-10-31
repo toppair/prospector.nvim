@@ -307,6 +307,25 @@ module.load = function(c, config)
     DapUIBreakpointsInfo                   = {},
     DapUIBreakpointsCurrentLine            = { fg = c.green, gui = 'bold' },
     DapUIBreakpointsLine                   = { fg = c.blue },
+
+    -- Notify
+    NotifyERRORBorder                      = { fg = t(c.red, 0, -20, -40) },
+    NotifyWARNBorder                       = { fg = t(c.darkyellow, 0, -20, -40) },
+    NotifyINFOBorder                       = { fg = t(c.green, 0, -20, -40) },
+    NotifyDEBUGBorder                      = { fg = t(c.blue, 0, -30, -40) },
+    NotifyTRACEBorder                      = { fg = t(c.sky, 0, -20, -40) },
+
+    NotifyERRORIcon                        = { fg = t(c.red, 0, 0, -15) },
+    NotifyWARNIcon                         = { fg = t(c.darkyellow, 0, 0, -15) },
+    NotifyINFOIcon                         = { fg = t(c.green, 0, 0, -15) },
+    NotifyDEBUGIcon                        = { fg = t(c.blue, 0, -30, -15) },
+    NotifyTRACEIcon                        = { fg = t(c.sky, 0, 0, -15) },
+
+    NotifyERRORTitle                       = { fg = c.red },
+    NotifyWARNTitle                        = { fg = c.darkyellow },
+    NotifyINFOTitle                        = { fg = c.green },
+    NotifyDEBUGTitle                       = { fg = t(c.blue, 0, -30, 0) },
+    NotifyTRACETitle                       = { fg = c.sky },
   }
 
 end

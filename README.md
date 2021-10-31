@@ -56,6 +56,7 @@ default:
 - [Fugitive](https://github.com/tpope/vim-fugitive)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Marks](https://github.com/chentau/marks.nvim)
+- [Notify](https://github.com/rcarriga/nvim-notify)
 - [NvimTree](https://github.com/kyazdani42/nvim-tree.lua)
 - [SymbolsOutline](https://github.com/simrat39/symbols-outline.nvim)
 - [Telescope](https://github.com/nvim-telescope/telescope.nvim)
