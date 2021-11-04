@@ -337,6 +337,9 @@ module.load = function(c, config)
     NotifyINFOTitle                        = { fg = c.green },
     NotifyDEBUGTitle                       = { fg = t(c.blue, 0, -80, 0) },
     NotifyTRACETitle                       = { fg = c.sky },
+
+    -- Lightspeed
+    LightspeedGreyWash                     = { fg = s4 },
   }
 
 end
