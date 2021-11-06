@@ -10,6 +10,17 @@ return {
     sky = '#94d1c7',
     gray = '#778377',
   },
+  darker = {
+    bg = '#0d0d0d',
+    fg = '#e6e6e6',
+    red = '#d19494',
+    green = '#a3d194',
+    blue = '#94b2d1',
+    darkblue = '#7592a3',
+    yellow = '#d1cc94',
+    sky = '#94d1c7',
+    gray = '#778377',
+  },
   light = {
     bg = '#f2f7ba',
     fg = '#000000',
@@ -22,5 +33,16 @@ return {
     gold = '#4d4100',
     olive = '#c1c884',
     gray = '#333333',
+  },
+  blueberry = {
+    bg = '#06070d',
+    fg = '#eeeff7',
+    red = '#E48181',
+    orange = '#E4C381',
+    blue = '#8181e4',
+    darkblue = '#6a6aaf',
+    cyan = '#81E4E4',
+    purple = '#e481e4',
+    green = '#81e491',
   }
 }

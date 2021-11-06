@@ -1,27 +1,12 @@
 local module = {}
 
-module.setup = function(cfg)
+module.setup = function(config)
 
   if vim.g.colors_name == 'prospector' then
     return
   end
 
-  local colors = require('prospector.colors')
-  local fn = require('prospector.functions')
-
-  local config = fn.config_with_defaults(cfg)
-  local theme = fn.merge_groups(
-    fn.load_theme(colors, config), config.groups
-  )
-
-  fn.prepare(config)
-  fn.apply_theme(theme)
-  fn.setup_plugins(config)
-
-  if config.terminal_colors then
-    fn.apply_terminal_colors(colors, config)
-  end
-
+  require('prospector.functions').set_scheme(config)
 end
 
 return module

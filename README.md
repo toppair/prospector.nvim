@@ -1,14 +1,22 @@
 ### Prospector
 
-###### Dark and light colorscheme for Neovim
+###### Dark and light colorscheme variants for Neovim
 
 ---
 
-##### Dark
+##### dark
 
 ![Preview](./preview_dark.png)
 
-##### Light
+##### darker
+
+![Preview](./preview_darker.png)
+
+##### blueberry
+
+![Preview](./preview_blueberry.png)
+
+##### light
 
 ![Preview](./preview_light.png)
 

@@ -1,36 +1,33 @@
-local function prepare(config)
+local module = {}
+local colors = require('prospector.colors')
+
+module.prepare = function(config)
   vim.cmd 'hi clear'
   vim.cmd 'syntax reset'
   vim.opt.termguicolors = true
   vim.opt.background = config.variant == 'light' and 'light' or 'dark'
   vim.g.colors_name = 'prospector'
+  vim.g.prospector_variant = config.variant
 end
 
-local function config_with_defaults(config)
+module.config_with_defaults = function(config)
+
+  if not colors[config.variant] then
+    config.variant = 'dark'
+  end
 
   local default = {
     variant = 'dark',
     italic_comments = true,
     terminal_colors = true,
     underline_diagnostics = true,
-    groups = {}
+    groups = {},
   }
 
   return vim.tbl_extend('force', default, config or {})
-
 end
 
-local function load_theme(colors, config)
-
-  if config.variant == 'light' then
-    return require('prospector.theme_light').load(colors.light, config)
-  else
-    return require('prospector.theme_dark').load(colors.dark, config)
-  end
-
-end
-
-local function apply_theme(theme)
+module.apply_theme = function(theme)
 
   for group, style in pairs(theme) do
     local fg = style.fg and ' guifg=' .. style.fg or ' guifg=NONE'
@@ -42,57 +39,32 @@ local function apply_theme(theme)
 
 end
 
-local function apply_terminal_colors(colors, config)
+module.set_scheme = function(cfg)
+  local config = module.config_with_defaults(cfg)
+  local theme = require('prospector.theme_' .. config.variant)
+  local base = colors[config.variant]
+  local merged = module.merge_groups(
+    theme.load(theme.palette(base), config), config.groups
+  )
 
-  if config.variant == 'light' then
+  module.prepare(config)
+  module.setup_plugins(config)
+  module.apply_theme(merged)
 
-    colors = colors.light
+  if config.terminal_colors then
+    module.apply_terminal_colors(theme.terminal())
+  end
+end
 
-    vim.g.terminal_color_0 =  colors.bg
-    vim.g.terminal_color_1 =  colors.red
-    vim.g.terminal_color_2 =  colors.green
-    vim.g.terminal_color_3 =  colors.brown
-    vim.g.terminal_color_4 =  colors.blue
-    vim.g.terminal_color_5 =  colors.purple
-    vim.g.terminal_color_6 =  colors.sky
-    vim.g.terminal_color_7 =  colors.fg
+module.apply_terminal_colors = function(c)
 
-    vim.g.terminal_color_8 =  colors.bg
-    vim.g.terminal_color_9 =  colors.red
-    vim.g.terminal_color_10 = colors.green
-    vim.g.terminal_color_11 = colors.brown
-    vim.g.terminal_color_12 = colors.blue
-    vim.g.terminal_color_13 = colors.purple
-    vim.g.terminal_color_14 = colors.sky
-    vim.g.terminal_color_15 = colors.fg
-
-  else
-
-    colors = colors.dark
-
-    vim.g.terminal_color_0 =  colors.bg
-    vim.g.terminal_color_1 =  colors.red
-    vim.g.terminal_color_2 =  colors.green
-    vim.g.terminal_color_3 =  colors.yellow
-    vim.g.terminal_color_4 =  colors.blue
-    vim.g.terminal_color_5 =  colors.d45
-    vim.g.terminal_color_6 =  colors.sky
-    vim.g.terminal_color_7 =  colors.fg
-
-    vim.g.terminal_color_8 =  colors.bg
-    vim.g.terminal_color_9 =  colors.red
-    vim.g.terminal_color_10 = colors.green
-    vim.g.terminal_color_11 = colors.yellow
-    vim.g.terminal_color_12 = colors.blue
-    vim.g.terminal_color_13 = colors.d45
-    vim.g.terminal_color_14 = colors.sky
-    vim.g.terminal_color_15 = colors.fg
-
+  for i, color in pairs(c) do
+    vim.g['terminal_color_' .. i - 1] = color
   end
 
 end
 
-local function setup_plugins(config)
+module.setup_plugins = function(config)
   local plugins = require('prospector.plugins')
 
   for _, setup in pairs(plugins) do
@@ -100,10 +72,9 @@ local function setup_plugins(config)
   end
 end
 
-local function merge_groups(theme, groups)
+module.merge_groups = function(theme, groups)
 
   for group, style in pairs(groups) do
-
     if type(style) == 'string' then
       theme[group] = theme[style] or {}
     else
@@ -111,18 +82,9 @@ local function merge_groups(theme, groups)
         theme[group][key] = value
       end
     end
-
   end
 
   return theme
 end
 
-return {
-  apply_terminal_colors = apply_terminal_colors,
-  apply_theme = apply_theme,
-  config_with_defaults = config_with_defaults,
-  load_theme = load_theme,
-  merge_groups = merge_groups,
-  prepare = prepare,
-  setup_plugins = setup_plugins
-}
+return module
