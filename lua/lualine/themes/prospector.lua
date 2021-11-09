@@ -148,10 +148,6 @@ local themes = {
         a = { fg = c.darkgray, bg = c.red, gui = 'bold' },
         b = { fg = c.fg, bg = c.darker, gui = 'bold' }
       },
-      command = {
-        a = { fg = c.darkgray, bg = c.purple, gui = 'bold' },
-        b = { fg = c.fg, bg = c.darker, gui = 'bold' }
-      },
       inactive = {
         a = { fg = c.fg, bg = c.darker },
         b = { fg = c.fg, bg = c.darker },
