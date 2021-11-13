@@ -131,10 +131,15 @@ module.load = function(palette, config)
     LspReferenceRead                      = { bg = p.bg_lighten },
     LspReferenceWrite                     = { bg = p.bg_lighten, gui = 'bold' },
 
-		LspDiagnosticsError                   = { fg = p.red },
-		LspDiagnosticsWarning                 = { fg = p.yellow },
-		LspDiagnosticsInformation             = { fg = p.sky },
-		LspDiagnosticsHint                    = { fg = p.darkblue },
+    DiagnosticError			  = { fg = p.error },
+    DiagnosticWarn			  = { fg = p.yellow },
+    DiagnosticInfo			  = { fg = p.sky },
+    DiagnosticHint			  = { fg = p.darkblue },
+
+    LspDiagnosticsError                   = { fg = p.error },
+    LspDiagnosticsWarning                 = { fg = p.yellow },
+    LspDiagnosticsInformation             = { fg = p.sky },
+    LspDiagnosticsHint                    = { fg = p.darkblue },
 
     LspDiagnosticsDefaultError            = { fg = p.error },
     LspDiagnosticsDefaultWarning          = { fg = p.yellow },
