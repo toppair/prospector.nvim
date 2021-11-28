@@ -1,12 +1,11 @@
 local module = {}
 local t = require('prospector.util').tweak_color
 
-module.terminal = function()
-  local c = require('prospector.colors').light
-  return { c.bg, c.red, c.green, c.brown, c.blue, c.purple, c.sky, c.fg }
+function module.terminal(base)
+  return { base.bg, base.red, base.green, base.brown, base.blue, base.purple, base.sky, base.fg }
 end
 
-module.palette = function(base)
+function module.palette(base)
   local palette = {
     bg_darken10 = t(base.bg, 0, 0, -10),
     bg_darken20 = t(base.bg, 0, 0, -20),
@@ -20,11 +19,11 @@ module.palette = function(base)
   return vim.tbl_extend('force', base, palette)
 end
 
-module.load = function(palette, config)
+function module.load(base, config)
 
   local diagnostics_underline = config.underline_diagnostics and 'underline' or 'none'
   local gui_comments = config.italic_comments and 'italic' or 'none'
-  local p = palette
+  local p = module.palette(base)
 
   return {
     Normal       = { fg = p.fg, bg = p.bg },

@@ -1,12 +1,11 @@
 local module = {}
 local t = require('prospector.util').tweak_color
 
-module.terminal = function()
-  local c = require('prospector.colors').blueberry
-  return { c.bg, c.red, c.green, c.orange, c.blue, c.darkblue, c.cyan, c.fg }
+function module.terminal(base)
+  return { base.bg, base.red, base.green, base.orange, base.blue, base.darkblue, base.cyan, base.fg }
 end
 
-module.palette = function(base)
+function module.palette(base)
   local palette = {
     bg_lighten = t(base.bg, 0, 0, 5),
     s2 = t(base.bg, 0, 0, 10),
@@ -20,11 +19,11 @@ module.palette = function(base)
   return vim.tbl_extend('force', base, palette)
 end
 
-module.load = function(palette, config)
+function module.load(base, config)
 
   local diagnostics_underline = config.underline_diagnostics and 'underline' or 'none'
   local gui_comments = config.italic_comments and 'italic' or 'none'
-  local p = palette
+  local p = module.palette(base)
 
   return {
     Normal       = { fg = p.fg, bg = p.bg },
@@ -251,37 +250,37 @@ module.load = function(palette, config)
     JSDocName            = { fg = t(p.darkblue, 0, 0, -20) },
     JSDocType            = { fg = p.orange },
 
-		-- NvimTree
-		NvimTreeRootFolder                     = { fg = p.s4 },
-		NvimTreeFolderName                     = { fg = p.s6 },
-		NvimTreeFolderIcon                     = { fg = p.cyan },
-		NvimTreeEmptyFolderName                = {},
-		NvimTreeOpenedFolderName               = { fg = p.fg },
-		NvimTreeIndentMarker                   = { fg = p.darkerblue },
-		NvimTreeGitDirty                       = { fg = p.red },
-		NvimTreeGitNew                         = { fg = p.red },
-		NvimTreeGitStaged                      = { fg = p.green },
-		NvimTreeGitDeleted                     = { fg = p.red },
-		NvimTreeOpenedFile                     = {},
-		NvimTreeImageFile                      = { fg = p.orange },
-		NvimTreeMarkdownFile                   = { fg = p.cyan },
-		NvimTreeExecFile                       = { fg = p.orange },
-		NvimTreeSpecialFile                    = { fg = p.cyan },
+    -- NvimTree
+    NvimTreeRootFolder                     = { fg = p.s4 },
+    NvimTreeFolderName                     = { fg = p.s6 },
+    NvimTreeFolderIcon                     = { fg = p.cyan },
+    NvimTreeEmptyFolderName                = {},
+    NvimTreeOpenedFolderName               = { fg = p.fg },
+    NvimTreeIndentMarker                   = { fg = p.darkerblue },
+    NvimTreeGitDirty                       = { fg = p.red },
+    NvimTreeGitNew                         = { fg = p.red },
+    NvimTreeGitStaged                      = { fg = p.green },
+    NvimTreeGitDeleted                     = { fg = p.red },
+    NvimTreeOpenedFile                     = {},
+    NvimTreeImageFile                      = { fg = p.orange },
+    NvimTreeMarkdownFile                   = { fg = p.cyan },
+    NvimTreeExecFile                       = { fg = p.orange },
+    NvimTreeSpecialFile                    = { fg = p.cyan },
 
-		-- Telescope
-		TelescopeNormal                        = { fg = p.s6, bg = p.bg },
-		TelescopePromptBorder                  = { fg = p.darkblue },
-		TelescopeResultsBorder                 = { fg = p.darkblue },
-		TelescopePreviewBorder                 = { fg = p.darkblue },
-		TelescopeSelectionCaret                = { fg = p.cyan },
-		TelescopeSelection                     = { fg = p.fg, bg = p.bg_lighten },
-		TelescopeMatching                      = { fg = p.cyan },
+    -- Telescope
+    TelescopeNormal                        = { fg = p.s6, bg = p.bg },
+    TelescopePromptBorder                  = { fg = p.darkblue },
+    TelescopeResultsBorder                 = { fg = p.darkblue },
+    TelescopePreviewBorder                 = { fg = p.darkblue },
+    TelescopeSelectionCaret                = { fg = p.cyan },
+    TelescopeSelection                     = { fg = p.fg, bg = p.bg_lighten },
+    TelescopeMatching                      = { fg = p.cyan },
 
-		-- Dashboard
-		DashboardShortCut                      = { fg = p.orange },
-		DashboardHeader                        = { fg = p.darkerblue },
-		DashboardCenter                        = { fg = p.cyan },
-		DashboardFooter                        = { fg = p.darkerblue },
+    -- Dashboard
+    DashboardShortCut                      = { fg = p.orange },
+    DashboardHeader                        = { fg = p.darkerblue },
+    DashboardCenter                        = { fg = p.cyan },
+    DashboardFooter                        = { fg = p.darkerblue },
 
     -- Cmp
     CmpItemAbbr                            = { fg = p.fg },

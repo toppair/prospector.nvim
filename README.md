@@ -1,6 +1,6 @@
 ### Prospector
 
-###### Dark and light colorscheme variants for Neovim
+*Neovim colorscheme*
 
 ---
 
@@ -31,19 +31,16 @@ use 'toppair/prospector.nvim'
 
 #### Usage
 ```
-require('prospector').setup()
-```
-
-#### Configuration
-default:
-```
-{
-  variant = 'dark',
-  italic_comments = true,
-  terminal_colors = true,
-  underline_diagnostics = true,
-  groups = {}
-}
+require('prospector').setup(function(variant)
+  -- default:
+  return {
+    italic_comments = true,
+    terminal_colors = true,
+    underline_diagnostics = true,
+    groups = {}
+  }
+end)
+vim.cmd('colorscheme prospector_' .. 'dark' or 'darker' or 'blueberry' or 'light')
 ```
 
 ##### linking / altering groups
@@ -56,7 +53,7 @@ default:
 }
 ```
 
-#### Plugin support
+#### Explicit plugin support
 - [Bufferline](https://github.com/akinsho/bufferline.nvim)
 - [Cmp](https://github.com/hrsh7th/nvim-cmp)
 - [DapUI](https://github.com/rcarriga/nvim-dap-ui)

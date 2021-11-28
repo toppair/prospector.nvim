@@ -1,18 +1,18 @@
 local module = {}
 local dark = require('prospector.theme_dark')
 
-module.terminal = function()
-  return dark.terminal()
+function module.terminal(base)
+  return dark.terminal(base)
 end
 
-module.palette = function(base)
+function module.palette(base)
   return dark.palette(base)
 end
 
-module.load = function(palette, config)
+function module.load(base, config)
 
   local t = require('prospector.util').tweak_color
-  local p = palette
+  local p = module.palette(base)
 
   local darker = {
     DiffAdd      = { bg = t(p.bg, 100, 15, 5) },
@@ -21,7 +21,7 @@ module.load = function(palette, config)
     DiffText     = { bg = t(p.bg, 200, 15, 10) },
   }
 
-  return vim.tbl_extend('force', dark.load(palette, config), darker)
+  return vim.tbl_extend('force', dark.load(base, config), darker)
 end
 
 return module

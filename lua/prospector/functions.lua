@@ -1,79 +1,35 @@
 local module = {}
 local colors = require('prospector.colors')
+local opt = vim.opt
+local g = vim.g
+local nvim_command = vim.api.nvim_command
 
-module.prepare = function(config)
-  vim.cmd 'hi clear'
-  vim.cmd 'syntax reset'
-  vim.opt.termguicolors = true
-  vim.opt.background = config.variant == 'light' and 'light' or 'dark'
-  vim.g.colors_name = 'prospector'
-  vim.g.prospector_variant = config.variant
+local function prepare(config)
+  opt.termguicolors = true
+  opt.background = config.variant == 'light' and 'light' or 'dark'
+  g.colors_name = 'prospector_' .. config.variant
 end
 
-module.config_with_defaults = function(config)
-
-  if not colors[config.variant] then
-    config.variant = 'dark'
-  end
-
-  local default = {
-    variant = 'dark',
-    italic_comments = true,
-    terminal_colors = true,
-    underline_diagnostics = true,
-    groups = {},
-  }
-
-  return vim.tbl_extend('force', default, config or {})
-end
-
-module.apply_theme = function(theme)
-
+local function apply_theme(theme)
   for group, style in pairs(theme) do
-    local fg = style.fg and ' guifg=' .. style.fg or ' guifg=NONE'
-    local bg = style.bg and ' guibg=' .. style.bg or ' guibg=NONE'
-    local gui = style.gui and ' gui=' .. style.gui or ' gui=NONE'
-
-    vim.cmd('hi ' .. group  .. fg  .. bg  .. gui)
-  end
-
-end
-
-module.set_scheme = function(cfg)
-  local config = module.config_with_defaults(cfg)
-  local theme = require('prospector.theme_' .. config.variant)
-  local base = colors[config.variant]
-  local merged = module.merge_groups(
-    theme.load(theme.palette(base), config), config.groups
-  )
-
-  module.prepare(config)
-  module.setup_plugins(config)
-  module.apply_theme(merged)
-
-  if config.terminal_colors then
-    module.apply_terminal_colors(theme.terminal())
+    nvim_command('hi ' .. group  .. ' guifg=' .. (style.fg or 'NONE') .. ' guibg=' .. (style.bg or 'NONE') .. ' gui=' .. (style.gui or 'NONE'))
   end
 end
 
-module.apply_terminal_colors = function(c)
-
+local function apply_terminal_colors(c)
   for i, color in pairs(c) do
-    vim.g['terminal_color_' .. i - 1] = color
-  end
-
-end
-
-module.setup_plugins = function(config)
-  local plugins = require('prospector.plugins')
-
-  for _, setup in pairs(plugins) do
-    setup(config)
+    g['terminal_color_' .. i - 1] = color
   end
 end
 
-module.merge_groups = function(theme, groups)
+local function setup_plugins(config)
+  local p = require('prospector.plugins')
+  p.setup_devicons(config)
+  p.setup_fugitive(config)
+  p.setup_symbols_outline(config)
+end
 
+local function merge_groups(theme, groups)
   for group, style in pairs(groups) do
     if type(style) == 'string' then
       theme[group] = theme[style] or {}
@@ -83,8 +39,29 @@ module.merge_groups = function(theme, groups)
       end
     end
   end
-
   return theme
+end
+
+function module.set_scheme(variant)
+  if g.colors_name == 'prospector_' .. variant then
+    return
+  end
+  local config = require('prospector.config').get(variant)
+  config.variant = variant
+  local base = colors[variant]
+  local theme = require('prospector.theme_' .. variant)
+  local final = merge_groups(
+    require('prospector.common_extends')(
+      theme.load(base, config)
+    ),
+    config.groups
+  )
+  prepare(config)
+  setup_plugins(config)
+  apply_theme(final)
+  if config.terminal_colors then
+    apply_terminal_colors(theme.terminal(base))
+  end
 end
 
 return module

@@ -1,3 +1,5 @@
+local module = {}
+
 local function round(n)
   return n % 1 >= 0.5 and math.ceil(n) or math.floor(n)
 end
@@ -51,7 +53,7 @@ local function to_hex(h, s, l)
   return '#' .. f(0) .. f(8) .. f(4)
 end
 
-local function tweak_color(hex, dh, ds, dl)
+function module.tweak_color(hex, dh, ds, dl)
   local h, s, l = to_hsl(hex)
 
   local nh = h + (dh or 0)
@@ -65,6 +67,4 @@ local function tweak_color(hex, dh, ds, dl)
   return to_hex(h, s, l)
 end
 
-return {
-  tweak_color = tweak_color
-}
+return module
