@@ -4,8 +4,9 @@ local devicons = {}
 local modified = false
 
 local function restore_devicons()
-  for name, conf in pairs(require('nvim-web-devicons').get_icons()) do
-    conf.color = devicons[name]
+  local icons = require('nvim-web-devicons').get_icons()
+  for name, hex in pairs(devicons) do
+    icons[name].color = hex
   end
 end
 
