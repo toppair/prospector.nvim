@@ -70,7 +70,7 @@ function module.load(base, config)
     CursorLine   = { bg = p.bg_darken10 },
     TermCursor   = { bg = p.bg_darken10 },
     TermCursorNC = { bg = p.bg },
-    ModeMsg      = { fg = p.s8, bg = p.bg },
+    ModeMsg      = { fg = p.fg, bg = p.bg },
     MsgArea      = { fg = p.fg, bg = p.bg },
     StatusLine   = { fg = p.fg, bg = p.olive },
     Directory    = { fg = p.blue },
