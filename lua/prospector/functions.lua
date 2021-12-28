@@ -7,6 +7,7 @@ local nvim_command = vim.api.nvim_command
 local function prepare(config)
   opt.termguicolors = true
   opt.background = config.variant == 'light' and 'light' or 'dark'
+  nvim_command('hi clear')
   g.colors_name = 'prospector_' .. config.variant
 end
 
