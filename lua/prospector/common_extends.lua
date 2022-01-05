@@ -25,6 +25,9 @@ return function(theme)
     CmpItemKindEvent	      		  = theme.TSProperty,
     CmpItemKindOperator	      		= theme.TSOperator,
     CmpItemKindTypeParameter  		= theme.TSType,
+
+    -- Lightspeed
+    LightspeedGreyWash            = theme.TSComment,
   }
   return vim.tbl_extend('force', theme, groups)
 end

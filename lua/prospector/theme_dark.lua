@@ -30,7 +30,7 @@ function module.load(base, config)
     LineNr       = { fg = p.s3, bg = p.bg },
     CursorLineNr = { fg = p.fg },
     SignColumn   = { fg = p.fg, bg = p.bg },
-    Comment      = { fg = p.s3, gui = gui_comments },
+    Comment      = { fg = p.s4, gui = gui_comments },
     Visual       = { bg = p.bg_lighten },
     VisualNOS    = { bg = p.bg_lighten },
     NormalFloat  = { fg = p.s8, bg = p.bg },
@@ -171,7 +171,7 @@ function module.load(base, config)
     TSAttribute          = { fg = p.red },
     TSBoolean            = { fg = p.blue },
     TSCharacter          = { fg = p.green },
-    TSComment            = { fg = p.s3, gui = gui_comments },
+    TSComment            = { fg = p.s4, gui = gui_comments },
     TSConstructor        = { fg = p.darkblue },
     TSConditional        = { fg = p.red },
     TSConstant           = { fg = p.blue },
@@ -350,9 +350,6 @@ function module.load(base, config)
     NotifyINFOTitle                        = { fg = p.green },
     NotifyDEBUGTitle                       = { fg = t(p.blue, 0, -30, 0) },
     NotifyTRACETitle                       = { fg = p.sky },
-
-    -- Lightspeed
-    LightspeedGreyWash                     = { fg = p.s3 },
   }
 
 end

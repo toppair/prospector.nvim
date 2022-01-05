@@ -11,6 +11,7 @@ function module.palette(base)
     s2 = t(base.bg, 0, 0, 10),
     s3 = t(base.bg, 0, 0, 20),
     s4 = t(base.bg, 0, 0, 30),
+    s5 = t(base.bg, 0, 0, 40),
     s6 = t(base.bg, 0, 0, 50),
     s8 = t(base.bg, 0, 0, 70),
     darkerblue = t(base.darkblue, 0, 0, -30),
@@ -30,7 +31,7 @@ function module.load(base, config)
     LineNr       = { fg = p.s3, bg = p.bg },
     CursorLineNr = { fg = p.fg },
     SignColumn   = { fg = p.fg, bg = p.bg },
-    Comment      = { fg = p.s4, gui = gui_comments },
+    Comment      = { fg = p.s5, gui = gui_comments },
     Visual       = { bg = p.bg_lighten },
     VisualNOS    = { bg = p.bg_lighten },
     NormalFloat  = { fg = p.s8, bg = p.bg },
@@ -171,7 +172,7 @@ function module.load(base, config)
     TSAttribute          = { fg = p.red },
     TSBoolean            = { fg = p.blue },
     TSCharacter          = { fg = p.orange },
-    TSComment            = { fg = p.s4, gui = gui_comments },
+    TSComment            = { fg = p.s5, gui = gui_comments },
     TSConstructor        = { fg = p.darkblue },
     TSConditional        = { fg = p.red },
     TSConstant           = { fg = p.blue },
@@ -350,9 +351,6 @@ function module.load(base, config)
     NotifyINFOTitle                        = { fg = p.green },
     NotifyDEBUGTitle                       = { fg = t(p.blue, 0, -30, 0) },
     NotifyTRACETitle                       = { fg = p.cyan },
-
-    -- Lightspeed
-    LightspeedGreyWash                     = { fg = p.s3 },
   }
 
 end
