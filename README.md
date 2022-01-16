@@ -59,6 +59,7 @@ vim.cmd('colorscheme prospector_' .. 'dark' or 'darker' or 'blueberry' or 'light
 - [DapUI](https://github.com/rcarriga/nvim-dap-ui)
 - [Dashboard](https://github.com/glepnir/dashboard-nvim)
 - [Fugitive](https://github.com/tpope/vim-fugitive)
+- [Gitsigns](https://github.com/lewis6991/gitsigns.nvim)
 - [Lualine](https://github.com/hoob3rt/lualine.nvim)
 - [Marks](https://github.com/chentau/marks.nvim)
 - [Notify](https://github.com/rcarriga/nvim-notify)
