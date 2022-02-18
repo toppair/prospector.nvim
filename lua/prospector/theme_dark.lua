@@ -96,7 +96,7 @@ function module.load(base, config)
       Identifier     = { fg = p.yellow },
       Function       = { fg = p.yellow },
 
-      Statement      = { fg = p.red },
+      Statement      = { fg = p.gray, gui = 'bold' },
       Conditional    = { fg = p.red },
       Repeat         = { fg = p.red },
       Label          = { fg = p.fg },
