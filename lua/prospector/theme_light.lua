@@ -84,8 +84,6 @@ function module.load(base, config)
       -- SpellRare    = { },
       -- WildMenu     = { },
 
-      Foreground     = { fg = p.fg },
-
       Constant       = { fg = p.blue, gui = 'bold' },
       String         = { fg = p.green },
       Character      = { fg = p.green },
@@ -172,7 +170,7 @@ function module.load(base, config)
       TSBoolean            = { fg = p.blue },
       TSCharacter          = { fg = p.green },
       TSComment            = { fg = p.s3, gui = gui_comments },
-      TSConstructor        = { fg = p.purple },
+      TSConstructor        = { fg = p.gold },
       TSConditional        = { fg = p.red },
       TSConstant           = { fg = p.blue, gui = 'bold' },
       TSConstBuiltin       = { fg = p.blue, gui = 'bold' },
@@ -183,15 +181,15 @@ function module.load(base, config)
       TSFloat              = { fg = p.blue },
       TSFunction           = { fg = p.brown },
       TSFuncBuiltin        = { fg = p.brown, gui = 'bold' },
-      TSFuncMacro          = { fg = p.purple },
+      TSFuncMacro          = { fg = p.brown, gui = 'italic' },
       TSInclude            = { fg = p.red },
       TSKeyword            = { fg = p.gray, gui = 'bold' },
       TSKeywordFunction    = { fg = p.gray, gui = 'bold' },
-      TSKeywordOperator    = { fg = p.red },
+      TSKeywordOperator    = { fg = p.gray, gui = 'bold' },
       TSKeywordReturn      = { fg = p.gray, gui = 'bold' },
       TSLabel              = { fg = p.red },
       TSMethod             = { fg = p.brown },
-      TSNamespace          = { fg = p.purple },
+      TSNamespace          = { fg = p.purple, gui = 'bold' },
       TSNone               = { fg = p.fg },
       TSNumber             = { fg = p.blue },
       TSOperator           = { fg = p.red },
@@ -231,6 +229,9 @@ function module.load(base, config)
       TSWarning            = { fg = p.bg, bg = p.gold, gui = 'bold' },
       TSDanger             = { fg = p.bg, bg = p.red, gui = 'bold' },
       TSTodo               = { fg = p.bg, bg = p.sky, gui = 'bold' },
+
+      -- lua
+      luaTSConstructor     = { fg = p.purple },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },

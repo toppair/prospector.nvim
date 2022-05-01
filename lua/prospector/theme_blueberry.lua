@@ -85,8 +85,6 @@ function module.load(base, config)
       -- SpellRare    = { },
       -- WildMenu     = { },
 
-      Foreground     = { fg = p.fg },
-
       Constant       = { fg = p.darkblue, gui = 'bold' },
       String         = { fg = p.orange },
       Character      = { fg = p.orange },
@@ -173,10 +171,10 @@ function module.load(base, config)
       TSBoolean            = { fg = p.blue },
       TSCharacter          = { fg = p.orange },
       TSComment            = { fg = p.s5, gui = gui_comments },
-      TSConstructor        = { fg = p.darkblue },
+      TSConstructor        = { fg = p.orange },
       TSConditional        = { fg = p.red },
       TSConstant           = { fg = p.darkblue, gui = 'bold' },
-      TSConstBuiltin       = { fg = p.darkblue, gui = 'bold' },
+      TSConstBuiltin       = { fg = p.blue, gui = 'bold' },
       TSConstMacro         = { fg = p.blue },
       TSError              = { fg = p.error },
       TSException          = { fg = p.error },
@@ -184,15 +182,15 @@ function module.load(base, config)
       TSFloat              = { fg = p.blue },
       TSFunction           = { fg = t(p.cyan, 0, 0, -5) },
       TSFuncBuiltin        = { fg = t(p.cyan, 0, 0, -20), gui = 'bold' },
-      TSFuncMacro          = { fg = p.darkblue },
+      TSFuncMacro          = { fg = p.cyan, gui = 'italic' },
       TSInclude            = { fg = p.red },
       TSKeyword            = { fg = p.purple },
       TSKeywordFunction    = { fg = p.purple },
-      TSKeywordOperator    = { fg = p.red },
+      TSKeywordOperator    = { fg = p.purple },
       TSKeywordReturn      = { fg = p.purple },
       TSLabel              = { fg = p.red },
       TSMethod             = { fg = t(p.cyan, 0, 0, -5) },
-      TSNamespace          = { fg = p.darkblue },
+      TSNamespace          = { fg = p.darkblue, gui = 'bold' },
       TSNone               = { fg = p.fg },
       TSNumber             = { fg = p.blue },
       TSOperator           = { fg = p.red },
@@ -209,7 +207,7 @@ function module.load(base, config)
       TSStringSpecial      = { fg = p.red },
       TSSymbol             = { fg = p.cyan },
       TSType               = { fg = p.orange },
-      TSTypeBuiltin        = { fg = t(p.orange, 0, 0, -5), gui = 'bold' },
+      TSTypeBuiltin        = { fg = p.orange, gui = 'bold' },
       TSVariable           = { fg = p.fg },
       TSVariableBuiltin    = { fg = p.darkblue },
 
@@ -232,6 +230,9 @@ function module.load(base, config)
       TSWarning            = { fg = p.bg, bg = p.orange, gui = 'bold' },
       TSDanger             = { fg = p.bg, bg = p.red, gui = 'bold' },
       TSTodo               = { fg = p.bg, bg = p.cyan, gui = 'bold' },
+
+      -- lua
+      luaTSConstructor     = { fg = p.darkblue },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },
