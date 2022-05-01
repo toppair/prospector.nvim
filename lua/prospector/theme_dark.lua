@@ -179,7 +179,7 @@ function module.load(base, config)
       TSConstMacro         = { fg = p.blue },
       TSError              = { fg = p.error },
       TSException          = { fg = p.error },
-      TSField              = { fg = p.fg },
+      TSField              = { fg = t(p.bg, 0, 0, 65) },
       TSFloat              = { fg = p.blue },
       TSFunction           = { fg = t(p.yellow, 0, 0, -5) },
       TSFuncBuiltin        = { fg = t(p.yellow, 0, 0, -10), gui = 'bold' },
