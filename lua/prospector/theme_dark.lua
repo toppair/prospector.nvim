@@ -225,10 +225,9 @@ function module.load(base, config)
       TSTextReference      = { gui = 'italic' },
       -- TSEnvironment        = {},
       -- TSEnvironmentName    = {},
-      TSNote               = { fg = p.bg, bg = p.blue, gui = 'bold' },
-      TSWarning            = { fg = p.bg, bg = p.yellow, gui = 'bold' },
-      TSDanger             = { fg = p.bg, bg = p.red, gui = 'bold' },
-      TSTodo               = { fg = p.bg, bg = p.sky, gui = 'bold' },
+      TSNote               = { fg = t(p.blue, 0, 0, -5), gui = 'bold' },
+      TSWarning            = { fg = t(p.yellow, 0, 0, -5), gui = 'bold' },
+      TSDanger             = { fg = t(p.red, 0, 0, -5), gui = 'bold' },
 
       -- lua
       luaTSConstructor     = { fg = p.darkblue },
