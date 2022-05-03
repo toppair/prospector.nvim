@@ -218,7 +218,7 @@ function module.load(base, config)
       TSEmphasis           = { fg = p.sky },
       TSUnderline          = { gui = 'underline' },
       TSStrike             = { gui = 'strikethrough' },
-      TSTitle              = { bg = p.brown },
+      TSTitle              = { fg = p.fg, gui = 'bold' },
       -- TSLiteral         = {},
       TSURI                = { fg = p.sky },
       TSMath               = { fg = p.blue },
@@ -231,6 +231,7 @@ function module.load(base, config)
 
       -- lua
       luaTSConstructor     = { fg = p.purple },
+      luaTSKeywordOperator = { fg = p.red },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },
