@@ -33,7 +33,8 @@ function module.load(base, config)
       Comment      = { fg = p.s4, gui = gui_comments },
       Visual       = { bg = p.bg_lighten },
       VisualNOS    = { bg = p.bg_lighten },
-      NormalFloat  = { fg = p.s8, bg = p.bg },
+      NormalFloat  = { fg = p.s8, bg = p.s2 },
+      FloatBorder  = { fg = p.s4, bg = p.s2 },
       Pmenu        = { fg = p.fg, bg = p.s2 },
       PmenuSel     = { fg = p.fg, bg = p.s3 },
       PmenuSbar    = { bg = p.s3 },
@@ -91,7 +92,7 @@ function module.load(base, config)
       Boolean        = { fg = p.blue },
       Float          = { fg = p.blue },
 
-      Identifier     = { fg = p.yellow },
+      Identifier     = { fg = p.gray, gui = 'bold' },
       Function       = { fg = p.yellow },
 
       Statement      = { fg = p.gray, gui = 'bold' },
@@ -232,6 +233,14 @@ function module.load(base, config)
       -- lua
       luaTSConstructor     = { fg = p.darkblue },
       luaTSKeywordOperator = { fg = p.red },
+      luaFunction          = { fg = p.gray, gui = 'bold' },
+
+      -- typescript
+      typescriptParens          = { fg = p.fg, bg = p.s2 },
+      typescriptDOMDocMethod    = { fg = t(p.yellow, 0, 0, -5) },
+      typescriptTypeReference   = { fg = p.yellow },
+      typescriptFuncType        = { fg = p.s8 },
+      typescriptPredefinedType  = { fg = t(p.yellow, 0, 0, -5), gui = 'bold' },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },
