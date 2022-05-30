@@ -56,7 +56,7 @@ function module.load(base, config)
       TabLineFill  = { bg = p.bg_lighten },
       TabLineSel   = { fg = p.darkblue },
       Title        = { fg = p.blue },
-      VertSplit    = { fg = p.s3, bg = p.bg },
+      VertSplit    = { fg = p.s2, bg = p.bg },
       NonText      = { fg = p.blue },
       SpecialKey   = { fg = p.darkerblue },
       Conceal      = { fg = p.red },
@@ -106,7 +106,7 @@ function module.load(base, config)
       PreProc        = { fg = p.fg },
       Include        = { fg = p.red },
       Define         = { fg = p.red },
-      Macro          = { fg = p.darkblue },
+      Macro          = { fg = p.yellow, gui = 'italic' },
       PreCondit      = { fg = p.red },
 
       Type           = { fg = t(p.yellow, 0, 0, -5) },
@@ -202,7 +202,7 @@ function module.load(base, config)
       TSPunctSpecial       = { fg = p.s4 },
       TSRepeat             = { fg = p.red },
       TSString             = { fg = p.green },
-      TSStringRegex        = { fg = p.red },
+      TSStringRegex        = { fg = t(p.green, 0, 0, -10), gui = 'bold' },
       TSStringEscape       = { fg = p.yellow },
       TSStringSpecial      = { fg = p.yellow },
       TSSymbol             = { fg = p.yellow },
@@ -234,18 +234,27 @@ function module.load(base, config)
       luaTSConstructor     = { fg = p.darkblue },
       luaTSKeywordOperator = { fg = p.red },
       luaFunction          = { fg = p.gray, gui = 'bold' },
+      luaFunc              = { fg = t(p.yellow, 0, 0, -5) },
 
       -- typescript
-      typescriptParens          = { fg = p.fg, bg = p.s2 },
-      typescriptDOMDocMethod    = { fg = t(p.yellow, 0, 0, -5) },
-      typescriptTypeReference   = { fg = p.yellow },
-      typescriptFuncType        = { fg = p.s8 },
-      typescriptPredefinedType  = { fg = t(p.yellow, 0, 0, -5), gui = 'bold' },
+      typescriptParens           = { fg = p.fg, bg = p.s2 },
+      typescriptDOMDocMethod     = { fg = t(p.yellow, 0, 0, -5) },
+      typescriptTypeReference    = { fg = p.yellow },
+      typescriptFuncType         = { fg = p.s8 },
+      typescriptPredefinedType   = { fg = t(p.yellow, 0, 0, -5), gui = 'bold' },
+      typescriptMember           = { fg = t(p.bg, 0, 0, 65) },
+      typescriptBOMNavigatorProp = { fg = t(p.yellow, 0, 0, -5) },
+      typescriptAliasDeclaration = { fg = p.yellow },
+      typescriptClassName        = { fg = p.yellow },
+      typescriptXHRMethod        = { fg = t(p.yellow, 0, 0, -5) },
+
+      -- rust
+      rustModPath               = { fg = p.darkblue, gui = 'bold' },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },
       markdownLinkText     = { fg = p.sky, gui = 'italic' },
-      markdownCode         = { bg = p.s2 },
+      markdownCode         = { bg = p.bg_lighten },
       markdownBlockquote   = { fg = p.fg, gui = 'italic' },
       markdownListMarker   = { fg = p.blue },
       markdownRule         = { fg = p.s3, gui = 'bold' },
@@ -312,6 +321,8 @@ function module.load(base, config)
       CmpItemAbbrMatchFuzzy                  = { fg = p.fg },
       CmpItemKind                            = { fg = p.fg },
       CmpItemMenu                            = { fg = p.s8 },
+      CmpDocumentation                       = { fg = p.s8, bg = p.s2 },
+      CmpDocumentationBorder                 = { fg = p.s4, bg = p.s2 },
 
       -- Treesitter-Context
       TreesitterContext                      = { bg = p.bg_lighten },

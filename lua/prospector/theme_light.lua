@@ -56,7 +56,7 @@ function module.load(base, config)
       TabLineFill  = { bg = p.olive },
       TabLineSel   = { fg = p.blue },
       Title        = { fg = p.blue },
-      VertSplit    = { fg = p.s3, bg = p.bg },
+      VertSplit    = { fg = p.s6, bg = p.bg },
       NonText      = { fg = p.blue },
       SpecialKey   = { fg = p.purple },
       Conceal      = { fg = p.red },
@@ -95,7 +95,7 @@ function module.load(base, config)
       Identifier     = { fg = p.gray, gui = 'bold' },
       Function       = { fg = p.brown },
 
-      Statement      = { fg = p.red },
+      Statement      = { fg = p.gray, gui = 'bold' },
       Conditional    = { fg = p.red },
       Repeat         = { fg = p.red },
       Label          = { fg = p.fg },
@@ -106,7 +106,7 @@ function module.load(base, config)
       PreProc        = { fg = p.fg },
       Include        = { fg = p.red },
       Define         = { fg = p.red },
-      Macro          = { fg = p.purple },
+      Macro          = { fg = p.brown, gui = 'italic' },
       PreCondit      = { fg = p.red },
 
       Type           = { fg = p.gold },
@@ -202,8 +202,8 @@ function module.load(base, config)
       TSPunctSpecial       = { fg = p.s4 },
       TSRepeat             = { fg = p.red },
       TSString             = { fg = p.green },
-      TSStringRegex        = { fg = p.red },
-      TSStringEscape       = { fg = p.brown },
+      TSStringRegex        = { fg = p.green, gui = 'bold' },
+      TSStringEscape       = { fg = p.gold },
       TSStringSpecial      = { fg = p.red },
       TSSymbol             = { fg = p.gold },
       TSType               = { fg = p.gold },
@@ -233,7 +233,8 @@ function module.load(base, config)
       -- lua
       luaTSConstructor     = { fg = p.purple },
       luaTSKeywordOperator = { fg = p.red },
-      luaFunction          = { fg = p.brown },
+      luaFunction          = { fg = p.gray, gui = 'bold' },
+      luaFunc              = { fg = p.brown },
 
       -- typescript
       typescriptParens          = { fg = p.fg, bg = t(p.bg, 0, 0, -5) },
@@ -241,11 +242,19 @@ function module.load(base, config)
       typescriptTypeReference   = { fg = p.gold },
       typescriptFuncType        = { fg = p.s2 },
       typescriptPredefinedType  = { fg = p.gold, gui = 'bold' },
+      typescriptMember          = { fg = p.s2 },
+      typescriptBOMNavigatorProp = { fg = p.gold },
+      typescriptAliasDeclaration = { fg = p.gold },
+      typescriptClassName        = { fg = p.gold },
+      typescriptXHRMethod        = { fg = p.brown },
+
+      --rust
+      rustModPath               = { fg = p.purple, gui = 'bold' },
 
       -- markdown
       markdownUrl          = { fg = p.blue, gui = 'underline' },
       markdownLinkText     = { fg = p.blue, gui = 'italic' },
-      markdownCode         = { bg = p.olive },
+      markdownCode         = { bg = t(p.bg, 0, 0, -15) },
       markdownBlockquote   = { fg = p.fg, gui = 'italic' },
       markdownListMarker   = { fg = p.blue },
       markdownRule         = { fg = p.s6, gui = 'bold' },
@@ -312,6 +321,8 @@ function module.load(base, config)
       CmpItemAbbrMatchFuzzy                  = { fg = p.fg },
       CmpItemKind                            = { fg = p.fg },
       CmpItemMenu                            = { fg = p.fg },
+      CmpDocumentation                       = { fg = p.fg, bg = t(p.bg, 0, 0, -5) },
+      CmpDocumentationBorder                 = { fg = p.s3, bg = t(p.bg, 0, 0, -5) },
 
       -- Treesitter-Context
       TreesitterContext                      = { bg = p.bg_darken10 },
