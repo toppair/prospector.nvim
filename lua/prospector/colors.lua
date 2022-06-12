@@ -8,7 +8,7 @@ return {
         darkblue = '#7592a3',
         yellow = '#d1cc94',
         sky = '#94d1c7',
-        gray = '#778377',
+        gray = '#a1aaa1',
     },
     darker = {
         bg = '#0d0d0d',
@@ -19,7 +19,7 @@ return {
         darkblue = '#668699',
         yellow = '#c9c482',
         sky = '#82c9be',
-        gray = '#6d786d',
+        gray = '#949e94',
     },
     light = {
         bg = '#f2f7ba',

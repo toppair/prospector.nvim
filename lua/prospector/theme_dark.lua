@@ -92,15 +92,15 @@ function module.load(base, config)
       Boolean        = { fg = p.blue },
       Float          = { fg = p.blue },
 
-      Identifier     = { fg = p.gray, gui = 'bold' },
+      Identifier     = { fg = p.gray },
       Function       = { fg = p.yellow },
 
-      Statement      = { fg = p.gray, gui = 'bold' },
+      Statement      = { fg = p.gray },
       Conditional    = { fg = p.red },
       Repeat         = { fg = p.red },
       Label          = { fg = p.fg },
       Operator       = { fg = p.red },
-      Keyword        = { fg = p.gray, gui = 'bold' },
+      Keyword        = { fg = p.gray },
       Exception      = { fg = p.error },
 
       PreProc        = { fg = p.fg },
@@ -184,10 +184,10 @@ function module.load(base, config)
       TSFuncBuiltin        = { fg = t(p.yellow, 0, 0, -10), gui = 'bold' },
       TSFuncMacro          = { fg = p.yellow, gui = 'italic' },
       TSInclude            = { fg = p.red },
-      TSKeyword            = { fg = p.gray, gui = 'bold' },
-      TSKeywordFunction    = { fg = p.gray, gui = 'bold' },
-      TSKeywordOperator    = { fg = p.gray, gui = 'bold' },
-      TSKeywordReturn      = { fg = p.gray, gui = 'bold' },
+      TSKeyword            = { fg = p.gray },
+      TSKeywordFunction    = { fg = p.gray },
+      TSKeywordOperator    = { fg = p.gray },
+      TSKeywordReturn      = { fg = p.gray },
       TSLabel              = { fg = p.red },
       TSMethod             = { fg = t(p.yellow, 0, 0, -5) },
       TSNamespace          = { fg = p.darkblue, gui = 'bold' },
@@ -199,7 +199,7 @@ function module.load(base, config)
       TSProperty           = { fg = p.s8 },
       TSPunctDelimiter     = { fg = p.s4 },
       TSPunctBracket       = { fg = p.s4 },
-      TSPunctSpecial       = { fg = p.s4 },
+      TSPunctSpecial       = { fg = p.blue },
       TSRepeat             = { fg = p.red },
       TSString             = { fg = p.green },
       TSStringRegex        = { fg = t(p.green, 0, 0, -10), gui = 'bold' },
@@ -233,7 +233,7 @@ function module.load(base, config)
       -- lua
       luaTSConstructor     = { fg = p.darkblue },
       luaTSKeywordOperator = { fg = p.red },
-      luaFunction          = { fg = p.gray, gui = 'bold' },
+      luaFunction          = { fg = p.gray },
       luaFunc              = { fg = t(p.yellow, 0, 0, -5) },
 
       -- typescript
